@@ -15,18 +15,43 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //This method is called when the - button is clicked.
+
+    public void decrement(View view){
+        int quantity = 1;
+        display(quantity);
+        displayPrice(quantity * 5);
+    }
+
+    //This method is called when the + button is clicked.
+
+    public void increment(View view){
+        int quantity = 3;
+        display(quantity);
+        displayPrice(quantity * 5);
+    }
+
+
     //this method is called when the order button is clicked
 
     public void submitOrder(View view){
-        display(77*2+1);
-        displayPrice((77*2+1)*5);
+        int quantity = 2;
+        display(quantity);
+        displayPrice(quantity * 5);
 
     }
-    //this method displays the given quantity value on the screen.
 
+
+    //This method clears the displays  // TODO: 2017-03-05 use this function somehow!
+    public void clearOrder(View View){
+        display(0);
+        displayPrice(0);
+    }
+
+    //this method displays the given quantity value on the screen.
     private void display(int number){
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText(""+number);
+        quantityTextView.setText("" + number);
     }
     //This method displays the given quantity value/cost on the screen.
     private void displayPrice(int number){
